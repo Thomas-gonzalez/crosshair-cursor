@@ -1,4 +1,4 @@
-package com.example;
+package com.crosshaircursor;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -11,43 +11,45 @@ import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.ui.ClientUI;
+
+import java.awt.Cursor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Example"
+	name = "Crosshair Cursor", description = "Changes your cursor to a crosshair. Also supports animated cursors (see help page)"
 )
-public class ExamplePlugin extends Plugin
+public class CrosshairCursorPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private ClientUI clientUI;
+
+	@Inject
+	private CrosshairCursorConfig config;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("Example started!");
+		updateCursor();
+	}
+
+	private void updateCursor() {
+		clientUI.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("Example stopped!");
+		clientUI.resetCursor();
 	}
 
-	@Subscribe
-	public void onGameStateChanged(GameStateChanged gameStateChanged)
-	{
-		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
-		{
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.greeting(), null);
-		}
-	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	CrosshairCursorConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(CrosshairCursorConfig.class);
 	}
 }
