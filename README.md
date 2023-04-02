@@ -1,6 +1,6 @@
 # Crosshair Cursor
 
-This plugin works by switching to the "crosshair" system cursor type, called "Precision Select" in Windows. It looks like a gigantic cross by default, but you can easily change it to any cursor you want. This is an easy way of having cursor files insteand of pngs, so you can use center-clicking cursors (crosshairs, dots, circles) as well as animated cursors. That being said, though not very common the Precision Select type is sometimes used by other applications (when you take a snipping screenshot, for example), so keep in mind that if you change it you will also see it outside of Runelite in those situations.
+This plugin works by switching to the "crosshair" system cursor type, called "Precision Select" in Windows. It looks like a gigantic cross by default, but you can easily change it to any cursor you want. This is an easy way of having cursor files instead of pngs, so you can use center-clicking cursors (crosshairs, dots, circles) as well as animated cursors. That being said, though not very common the Precision Select type is sometimes used by other applications (when you take a snipping screenshot, for example), so keep in mind that if you change it you will also see it outside of Runelite in those situations.
 
 ## Changing the cursor
 
