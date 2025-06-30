@@ -30,10 +30,4 @@ public class CrosshairHotkeyListener implements KeyListener
 
     @Override
     public void keyReleased(KeyEvent e) {}
-
-    @Override
-    public boolean isEnabledOnLoginScreen()
-    {
-        return true;
-    }
 }
